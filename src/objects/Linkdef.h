@@ -9,7 +9,8 @@
 
 // Missing ROOT objects
 #pragma link C++ class ROOT::Math::Cartesian2D < unsigned int > +;
-#pragma link C++ class ROOT::Math::DisplacementVector2D < ROOT::Math::Cartesian2D < unsigned int >,                         \
+#pragma link C++ class ROOT::Math::DisplacementVector2D <                      \
+    ROOT::Math::Cartesian2D < unsigned int >,                                  \
     ROOT::Math::DefaultCoordinateSystemTag > +;
 
 // AP2 objects
@@ -24,4 +25,4 @@
 #pragma link C++ class allpix::PixelHit + ;
 
 // Vector of Object for internal storage
-#pragma link C++ class std::vector < allpix::Object* > +;
+#pragma link C++ class std::vector < allpix::Object * > +;
