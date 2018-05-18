@@ -339,6 +339,11 @@ By adding this, the module promises that it will work correctly if the run-metho
 This means in particular that the module will safely handle access to shared (for example static) variables and it will properly bind ROOT histograms to their directory before the \parameter{run()}-method.
 Access to constant operations in the GeometryManager, Detector and DetectorModel is always valid between various threads. In addition, sending and receiving messages is thread-safe.
 
+During simulation execution, events are run in a sequential manner while parallelizable modules have a thread pool to their disposal.
+Tasks that can run in parallel are submitted to this pool from the events' modules and are finished before simulating the next event.
+
+In future versions of \apsq, module-end parallelization will be stripped in favour of event-based concurreny.
+
 \section{Geometry and Detectors}
 \label{sec:models_geometry}
 Simulations are frequently performed for a set of different detectors (such as a beam telescope and a device under test).
